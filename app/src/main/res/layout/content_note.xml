@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".NoteActivity"
+    tools:showIn="@layout/activity_note">
+
+    <Spinner
+        android:id="@+id/spinner_courses"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/text_note_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="Note title"
+        android:inputType="textMultiLine"
+        android:textColor="#961A96"
+        app:layout_constraintEnd_toEndOf="@+id/spinner_courses"
+        app:layout_constraintStart_toStartOf="@+id/spinner_courses"
+        app:layout_constraintTop_toBottomOf="@+id/spinner_courses" />
+
+    <EditText
+        android:id="@+id/text_note_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="Note text"
+        android:inputType="textMultiLine"
+        app:layout_constraintEnd_toEndOf="@+id/text_note_title"
+        app:layout_constraintStart_toStartOf="@+id/text_note_title"
+        app:layout_constraintTop_toBottomOf="@+id/text_note_title" />
+
+</android.support.constraint.ConstraintLayout>
