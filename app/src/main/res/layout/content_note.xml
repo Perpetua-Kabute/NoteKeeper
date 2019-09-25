@@ -29,7 +29,7 @@
         android:gravity="start|top"
         android:hint="Note title"
         android:inputType="textMultiLine"
-        android:textColor="#961A96"
+        android:textColor="#0A080A"
         app:layout_constraintEnd_toEndOf="@+id/spinner_courses"
         app:layout_constraintStart_toStartOf="@+id/spinner_courses"
         app:layout_constraintTop_toBottomOf="@+id/spinner_courses" />

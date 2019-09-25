@@ -1,14 +1,18 @@
 package com.androidplayground.notes;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
+
+import com.androidplayground.courses.R;
 
 import java.util.List;
 
@@ -130,8 +134,30 @@ public class NoteActivity extends AppCompatActivity {
         }else if(id == R.id.action_cancel) {
             mIsCancelling = true;
             finish();
+        }else if(id == R.id.action_next){
+            moveNext();
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @SuppressLint("RestrictedApi")
+    @Override
+    protected boolean onPrepareOptionsPanel(View view, Menu menu) {
+        MenuItem item = menu.findItem(R.id.action_next);
+        int lastNoteIndex = DataManager.getInstance().getNotes().size() - 1;
+        item.setEnabled(mNotePosition < lastNoteIndex);
+        return super.onPrepareOptionsPanel(view, menu);
+    }
+
+    private void moveNext() {
+        saveNote();
+        ++mNotePosition;
+        mNote = DataManager.getInstance().getNotes().get(mNotePosition);
+
+        saveOriginalNoteValue();
+        displayNote(mSpinnerCourses, mTextNoteTitle,mTextNoteText);
+        invalidateOptionsMenu();
+
     }
 
     @Override

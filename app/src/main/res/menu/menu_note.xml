@@ -1,14 +1,22 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.androidplayground.notes.NoteActivity">
-    <item
-        android:id="@+id/action_cancel"
-        android:orderInCategory="100"
-        android:title="Cancel" />
+    tools:context="com.androidplayground.courses.NoteActivity">
     <item
         android:id="@+id/action_send_mail"
-        android:orderInCategory="101"
+        android:orderInCategory="103"
         android:title="Send as mail"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/action_next"
+        android:icon="@android:drawable/ic_media_next"
+        android:orderInCategory="102"
+        android:title="Next"
+        app:showAsAction="ifRoom|withText" />
+    <item
+        android:id="@+id/action_cancel"
+        android:icon="@android:drawable/ic_menu_revert"
+        android:orderInCategory="101"
+        android:title="Cancel"
+        app:showAsAction="ifRoom|withText" />
 </menu>
